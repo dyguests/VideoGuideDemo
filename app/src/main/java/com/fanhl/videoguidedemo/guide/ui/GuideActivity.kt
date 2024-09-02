@@ -1,5 +1,6 @@
 package com.fanhl.videoguidedemo.guide.ui
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
@@ -8,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.fanhl.videoguidedemo.R
 import com.fanhl.videoguidedemo.databinding.ActivityGuideBinding
+
 
 class GuideActivity : AppCompatActivity() {
     lateinit var binding: ActivityGuideBinding
@@ -39,6 +41,10 @@ class GuideActivity : AppCompatActivity() {
     }
 
     private fun initData() {
+        // 获取视频文件的 URI
+        val videoUri = Uri.parse("android.resource://" + packageName + "/" + R.raw.demo1compress1)
+        binding.videoView.setVideoURI(videoUri)
+        binding.videoView.start()
     }
 
     companion object {
