@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="OverlayView">
+        <attr name="hollowRectLeft" format="float" />
+        <attr name="hollowRectTop" format="float" />
+        <attr name="hollowRectRight" format="float" />
+        <attr name="hollowRectBottom" format="float" />
+        <attr name="cornerRadius" format="dimension" />
+    </declare-styleable>
+</resources>
