@@ -1,6 +1,7 @@
 package com.fanhl.videoguidedemo.guide.ui
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -10,6 +11,8 @@ import com.fanhl.videoguidedemo.databinding.ActivityGuideBinding
 
 class GuideActivity : AppCompatActivity() {
     lateinit var binding: ActivityGuideBinding
+
+    private var exitable: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,13 +24,15 @@ class GuideActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val exitable = intent.getBooleanExtra(KEY_EXITABLE, false)
+
+        exitable = intent.getBooleanExtra(KEY_EXITABLE, false)
 
         initView()
         initData()
     }
 
     private fun initView() {
+        binding.btnExit.visibility = (if (exitable) View.VISIBLE else View.GONE)
         binding.btnExit.setOnClickListener {
             finish()
         }
