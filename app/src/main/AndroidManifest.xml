@@ -14,10 +14,8 @@
         android:theme="@style/Theme.VideoGuideDemo"
         tools:targetApi="31">
         <activity
-            android:name=".guide.ui.GuideActivity"
-            android:exported="false"
-            android:label="@string/title_activity_guide"
-            android:theme="@style/Theme.VideoGuideDemo" />
+            android:name=".guide.ui.Guide2Activity"
+            android:exported="false" />
         <activity
             android:name=".ui.AliceActivity"
             android:exported="false"
