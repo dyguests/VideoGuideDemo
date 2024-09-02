@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="OverlayView">
+        <attr name="overlayColor" format="color" />
         <attr name="hollowRectLeft" format="float" />
         <attr name="hollowRectTop" format="float" />
         <attr name="hollowRectRight" format="float" />

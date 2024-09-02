@@ -22,12 +22,17 @@ class OverlayView @JvmOverloads constructor(
     private var rectF = RectF()
 
     // 初始化参数
-    private var hollowRect = RectF(0.1f, 0.2f, 0.9f, 0.3f) // 默认透明区域百分比 (左, 上, 右, 下)
+    var overlayColor: Int = 0x80FFFFFF.toInt() // 默认半透明黑色
         set(value) {
             field = value
             invalidate()
         }
-    private var cornerRadius: Float = dpToPx(16f) // 默认圆角大小
+    var hollowRect = RectF(0.1f, 0.2f, 0.9f, 0.3f) // 默认透明区域百分比 (左, 上, 右, 下)
+        set(value) {
+            field = value
+            invalidate()
+        }
+    var cornerRadius: Float = dpToPx(16f) // 默认圆角大小
         set(value) {
             field = value
             invalidate()
@@ -40,8 +45,7 @@ class OverlayView @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        // 绘制半透明背景
-        paint.color = 0x80000000.toInt() // 半透明黑色
+        paint.color = overlayColor
         canvas.drawRect(0f, 0f, width.toFloat(), height.toFloat(), paint)
 
         // 根据百分比计算实际的透明区域
