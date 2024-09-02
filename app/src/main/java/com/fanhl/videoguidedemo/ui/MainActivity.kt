@@ -18,6 +18,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.fanhl.videoguidedemo.ui.theme.VideoGuideDemoTheme
@@ -31,8 +32,6 @@ class MainActivity : ComponentActivity() {
             VideoGuideDemoTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     MainScreen(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding),
                         innerPadding
                     )
                 }
@@ -42,9 +41,10 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun MainScreen(name: String, modifier: Modifier = Modifier, innerPadding: PaddingValues) {
+fun MainScreen(innerPadding: PaddingValues) {
+    val context = LocalContext.current
     Column(
-        modifier = modifier
+        modifier = Modifier
             .fillMaxSize()
             .padding(innerPadding),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -55,7 +55,7 @@ fun MainScreen(name: String, modifier: Modifier = Modifier, innerPadding: Paddin
             style = MaterialTheme.typography.bodyLarge,
         )
         Spacer(modifier = Modifier.height(10.dp))
-        Button(onClick = { navi(AliceActivity::class) }) {
+        Button(onClick = { context.navi(AliceActivity::class) }) {
             Text(text = "Goto Alice")
         }
     }
@@ -65,6 +65,6 @@ fun MainScreen(name: String, modifier: Modifier = Modifier, innerPadding: Paddin
 @Composable
 fun MainScreenPreview() {
     VideoGuideDemoTheme {
-        MainScreen("Android", innerPadding = PaddingValues())
+        MainScreen(innerPadding = PaddingValues())
     }
 }
