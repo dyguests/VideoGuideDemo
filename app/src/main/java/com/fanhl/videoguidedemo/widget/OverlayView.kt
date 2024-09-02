@@ -22,12 +22,12 @@ class OverlayView @JvmOverloads constructor(
     private var rectF = RectF()
 
     // 初始化参数
-    var overlayColor: Int = 0x80FFFFFF.toInt() // 默认半透明黑色
+    var overlayColor: Int = 0xCCFFFFFF.toInt() // 默认半透明黑色
         set(value) {
             field = value
             invalidate()
         }
-    var hollowRect = RectF(0.1f, 0.2f, 0.9f, 0.3f) // 默认透明区域百分比 (左, 上, 右, 下)
+    var hollowRect = RectF(0.2f, 0.2f, 0.8f, 0.3f) // 默认透明区域百分比 (左, 上, 右, 下)
         set(value) {
             field = value
             invalidate()
@@ -44,6 +44,9 @@ class OverlayView @JvmOverloads constructor(
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
+
+        // 设置View的层类型，启用软件或硬件渲染
+        setLayerType(LAYER_TYPE_HARDWARE, null)
 
         paint.color = overlayColor
         canvas.drawRect(0f, 0f, width.toFloat(), height.toFloat(), paint)
