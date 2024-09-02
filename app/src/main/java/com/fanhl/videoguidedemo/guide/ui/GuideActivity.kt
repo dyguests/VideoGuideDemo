@@ -10,6 +10,7 @@ import com.fanhl.videoguidedemo.databinding.ActivityGuideBinding
 
 class GuideActivity : AppCompatActivity() {
     lateinit var binding: ActivityGuideBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -21,6 +22,18 @@ class GuideActivity : AppCompatActivity() {
             insets
         }
         val exitable = intent.getBooleanExtra(KEY_EXITABLE, false)
+
+        initView()
+        initData()
+    }
+
+    private fun initView() {
+        binding.btnExit.setOnClickListener {
+            finish()
+        }
+    }
+
+    private fun initData() {
     }
 
     companion object {
