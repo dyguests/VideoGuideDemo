@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.fanhl.videoguidedemo.guide.NewbieGuide
 import com.fanhl.videoguidedemo.ui.theme.VideoGuideDemoTheme
 import com.fanhl.videoguidedemo.util.navi
 
@@ -57,6 +58,13 @@ fun MainScreen(innerPadding: PaddingValues) {
         Spacer(modifier = Modifier.height(10.dp))
         Button(onClick = { context.navi(AliceActivity::class) }) {
             Text(text = "Goto Alice")
+        }
+        Spacer(modifier = Modifier.height(20.dp))
+        Button(onClick = { NewbieGuide.start(context) }) {
+            Text(text = "新手引导")
+        }
+        Button(onClick = { NewbieGuide.start(context, true) }) {
+            Text(text = "新手引导 可退出")
         }
     }
 }
