@@ -2,7 +2,7 @@ package com.fanhl.videoguidedemo.guide
 
 import android.content.Context
 import android.util.Log
-import com.fanhl.videoguidedemo.guide.ui.Guide2Activity
+import com.fanhl.videoguidedemo.guide.ui.GuideActivity
 import com.fanhl.videoguidedemo.util.navi
 
 object NewbieGuide {
@@ -12,8 +12,8 @@ object NewbieGuide {
         exitable: Boolean = false,
     ) {
         Log.d(TAG, "start")
-        context.navi(Guide2Activity::class) {
-            putExtra(Guide2Activity.KEY_EXITABLE, exitable)
+        context.navi(GuideActivity::class) {
+            putExtra(GuideActivity.KEY_EXITABLE, exitable)
         }
     }
 }

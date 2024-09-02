@@ -8,7 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.fanhl.videoguidedemo.R
 import com.fanhl.videoguidedemo.databinding.ActivityGuideBinding
 
-class Guide2Activity : AppCompatActivity() {
+class GuideActivity : AppCompatActivity() {
     lateinit var binding: ActivityGuideBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
