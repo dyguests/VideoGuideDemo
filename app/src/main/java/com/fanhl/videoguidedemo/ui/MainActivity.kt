@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.fanhl.videoguidedemo.ui.theme.VideoGuideDemoTheme
+import com.fanhl.videoguidedemo.util.navi
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,8 +55,8 @@ fun MainScreen(name: String, modifier: Modifier = Modifier, innerPadding: Paddin
             style = MaterialTheme.typography.bodyLarge,
         )
         Spacer(modifier = Modifier.height(10.dp))
-        Button(onClick = { /*TODO*/ }) {
-            Text(text = "Goto A")
+        Button(onClick = { navi(AliceActivity::class) }) {
+            Text(text = "Goto Alice")
         }
     }
 }

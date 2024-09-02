@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">视频交互引导</string>
+    <string name="title_activity_alice">AliceActivity</string>
 </resources>
