@@ -22,6 +22,11 @@
 
     <com.fanhl.videoguidedemo.widget.OverlayView
         android:layout_width="match_parent"
+        app:hollowRectBottom=".16"
+        app:hollowRectLeft=".74"
+        app:hollowRectRight=".95"
+        app:hollowRectTop=".04"
+        app:overlayColor="#A3B6B6B6"
         android:layout_height="match_parent" />
 
     <TextView
@@ -44,9 +49,9 @@
         android:text="点我"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.82"
+        app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.24000001" />
+        app:layout_constraintVertical_bias="0.06999999" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
