@@ -10,6 +10,7 @@ import android.graphics.RectF
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.View
+import com.fanhl.videoguidedemo.R
 
 class OverlayView @JvmOverloads constructor(
     context: Context,
@@ -39,7 +40,16 @@ class OverlayView @JvmOverloads constructor(
         }
 
     init {
-
+        context.theme.obtainStyledAttributes(attrs, R.styleable.OverlayView, 0, 0).use {
+            overlayColor = it.getColor(R.styleable.OverlayView_overlayColor, overlayColor)
+            hollowRect = RectF(
+                it.getFloat(R.styleable.OverlayView_hollowRectLeft, hollowRect.left),
+                it.getFloat(R.styleable.OverlayView_hollowRectTop, hollowRect.top),
+                it.getFloat(R.styleable.OverlayView_hollowRectRight, hollowRect.right),
+                it.getFloat(R.styleable.OverlayView_hollowRectBottom, hollowRect.bottom)
+            )
+            cornerRadius = it.getDimension(R.styleable.OverlayView_cornerRadius, cornerRadius)
+        }
     }
 
     override fun onDraw(canvas: Canvas) {
@@ -72,5 +82,9 @@ class OverlayView @JvmOverloads constructor(
     // dp转px的辅助方法
     private fun dpToPx(dp: Float): Float {
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, resources.displayMetrics)
+    }
+
+    companion object {
+        private const val TAG = "OverlayView"
     }
 }
