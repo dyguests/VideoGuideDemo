@@ -65,7 +65,9 @@ class GuideActivity : AppCompatActivity() {
         // binding.videoView.setVideoURI(videoUri)
         // binding.videoView.start()
 
-        val guidePlayer = GuidePlayer(this, binding.videoView, binding.clInteraction)
+        val guidePlayer = GuidePlayer(this, binding.videoView, binding.clInteraction) {
+            finish()
+        }
         guidePlayer.play(timeline)
     }
 

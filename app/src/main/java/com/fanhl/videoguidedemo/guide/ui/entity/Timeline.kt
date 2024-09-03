@@ -7,6 +7,9 @@ val timeline = listOf(
         sourceType = VideoClip.SOURCE_RAW,
         rawSource = R.raw.clip1compress,
     ),
+    InteractionClip(
+
+    ),
     VideoClip(
         sourceType = VideoClip.SOURCE_RAW,
         rawSource = R.raw.clip2compress,
